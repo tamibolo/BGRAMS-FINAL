@@ -1,0 +1,224 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --tile-size: 35px;
+  --tile-container-size: 50px;
+}
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+}
+.home-container #new-game {
+  align-self: end;
+}
+.main-container {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  place-content: center;
+}
+.game-area {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+.game-stats {
+  display: grid;
+  align-content: start;
+}
+.game-stats h2 {
+  text-align: center;
+}
+.game-stats .stats {
+  border: 4px solid gray;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.winner {
+  display: none;
+}
+
+.stats section {
+  font-size: 1.2rem;
+}
+.game-controls {
+  border-radius: 8px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+.player-hand {
+  min-height: var(--tile-container-size);
+  display: flex;
+  place-items: center start;
+  gap: 16px;
+  min-width: 300px;
+  border: 4px solid #ffc107;
+  border-radius: 8px;
+  padding: 16px;
+  flex-wrap: wrap;
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(var(--tile-container-size), 1fr));
+  grid-template-rows: repeat(12, minmax(var(--tile-container-size), 1fr));
+  gap: 8px;
+}
+
+.tile {
+  height: var(--tile-size);
+  width: var(--tile-size);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  box-shadow: 2px 2px 6px -1px;
+  border-radius: 4px;
+  font-weight: 600;
+  background: hsl(39 58% 93% / 1);
+}
+.tile:hover {
+  box-shadow: 2px 2px 8px -1px;
+}
+
+.tile-container {
+  border: 3px solid royalblue;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.tile-container.target {
+  border-style: dashed;
+}
+.tile.selected {
+  background: hsl(36, 100%, 50%);
+}
+
+#player-name {
+  text-transform: capitalize;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+}
+header {
+  background-color: #ffc107;
+  padding: 16px;
+  text-align: center;
+  color: white;
+}
+h1 {
+  margin: 0;
+}
+
+input {
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  outline: none;
+}
+label {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+button {
+  background-color: #ffc107;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #ffc10784;
+  pointer-events: none;
+}
+
+.games-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  gap: 16px;
+  list-style: none;
+  padding: 16px 0;
+  margin: 0;
+}
+
+.games-list .game-info {
+  overflow: hidden;
+  border: 4px solid;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.game-info header {
+  margin: -16px -16px 16px;
+}
+.game-info header > h2 {
+  margin: 0;
+}
+.game-info[status="created"] header {
+  background-color: hsl(122, 39%, 49%);
+}
+.game-info[status="in_progress"] header {
+  background-color: royalblue;
+}
+.game-info .status-text {
+  padding: 4px;
+  border-radius: 4px;
+  display: inline-block;
+  color: #f4f4f4;
+}
+.game-info button.join-game {
+  display: block;
+  width: 100%;
+}
+.game-info[status="created"] .status-text {
+  background-color: hsl(122, 39%, 49%);
+}
+.game-info[status="in_progress"] .status-text {
+  background-color: royalblue;
+}
+.game-info[status="finished"] .status-text {
+  background-color: #ffc107;
+}
+
+.game-info[status="created"] {
+  border-color: hsl(122, 39%, 49%);
+}
+.game-info[status="in_progress"] {
+  border-color: royalblue;
+}
+.game-info[status="finished"] {
+  border-color: #ffc107;
+}
+/* .game-info[status="finished"] header {
+} */

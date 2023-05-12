@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homepage</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>BANANAGRAMS</h1>
+    </header>
+    <main class="home-container">
+      <button id="new-game">New Game</button>
+
+      <article id="games">
+        <!-- <h1>Open Games</h1> -->
+      </article>
+
+      <!-- <label for="name">Enter your name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="mode">Choose a mode:</label>
+      <input type="radio" id="same-screen" name="mode" value="same-screen" checked>
+      <label for="same-screen">Play Together</label>
+
+      <input type="radio" id="remote" name="mode" value="remote">
+      <label for="remote">Join Remote</label> -->
+      <!-- <div id="main">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="mode">Choose a mode:</label>
+        <input type="radio" id="same-screen" name="mode" value="same-screen" checked />
+        <label for="same-screen">Play Together</label>
+
+        <input type="radio" id="remote" name="mode" value="remote" />
+        <label for="remote">Join Remote</label>
+        <button id="start-game">Start Game</button>
+      </div> -->
+    </main>
+    <!-- <script>
+      const startButton = document.getElementById("start-game");
+
+      startButton.addEventListener("click", () => {
+        const nameInput = document.getElementById("name");
+        const name = nameInput.value;
+        const modeInput = document.querySelector('input[name="mode"]:checked');
+        const mode = modeInput.value;
+        if (mode === "same-screen") {
+          const main = document.getElementById("main");
+
+          const label = document.createElement("label");
+          label.innerHTML = "Enter your name:";
+          label.setAttribute("for", "name");
+
+          main.appendChild(label);
+          const player2Input = document.createElement("input");
+          player2Input.setAttribute("type", "text");
+          player2Input.setAttribute("id", "player2");
+
+          main.appendChild(player2Input);
+          const newStart = document.createElement("button");
+          newStart.setAttribute("id", "start-game");
+          newStart.innerHTML = "Start Game with 2 Players";
+          main.appendChild(newStart);
+          newStart.addEventListener("click", () => {
+            localStorage.setItem("player2", player2Input.value);
+            //navigate to index.html
+            location.href = "index.html";
+          });
+        } else {
+          //start remote game
+        }
+        // Do something with the name and mode, like redirect to the appropriate page
+        console.log(`Name: ${name}, Mode: ${mode}`);
+        localStorage.setItem("name", name);
+        localStorage.setItem("mode", mode);
+      });
+    </script> -->
+    <script src="constants.js"></script>
+    <script src="api.js"></script>
+    <script src="home.js"></script>
+  </body>
+</html>

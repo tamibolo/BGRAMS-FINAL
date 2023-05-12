@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header><h1>BANANAGRAMS</h1></header>
+    <main class="main-container">
+      <section class="game-area">
+        <section>
+          <article class="game-controls">
+            <h2 id="player-name">Player's Hand</h2>
+            <section>
+              <button id="btn-split" disabled>Split</button>
+              <button id="btn-peel" disabled>Peel</button>
+              <button id="btn-dump" disabled>Dump</button>
+              <button id="btn-bananas" disabled>Bananas</button>
+            </section>
+          </article>
+
+          <section class="player-hand"></section>
+        </section>
+        <section class="board"></section>
+      </section>
+      <section class="game-stats">
+        <section class="stats">
+          <h2>Game Stats</h2>
+          <section>
+            <p class="winner"><strong>Winner:</strong> <span id="winner-name"></span></p>
+            <p><strong>Players:</strong> <span id="player-count"></span></p>
+            <p><strong>Peels:</strong> <span id="peel-count">0</span></p>
+          </section>
+        </section>
+      </section>
+    </main>
+    <script src="constants.js"></script>
+    <script src="api.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
